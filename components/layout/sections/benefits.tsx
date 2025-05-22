@@ -11,27 +11,27 @@ interface BenefitsProps {
 const benefitList: BenefitsProps[] = [
   {
     icon: "Blocks",
-    title: "Build Brand Trust",
+    title: "Custom AI Design",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+      "Leverage our AI-driven parametric design to create custom prostheses in minutes, tailored to each individual's anatomy.",
   },
   {
     icon: "LineChart",
-    title: "More Leads",
+    title: "Cost Efficiency",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, natus consectetur.",
+      "Reduce production costs by up to 40% through distributed manufacturing and smart resource allocation.",
   },
   {
     icon: "Wallet",
-    title: "Higher Conversions",
+    title: "Scalable Production",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consectetur. A odio velit cum aliquam",
+      "Our cloud-based workflow scales with demand, ensuring quick turnaround without compromising quality.",
   },
   {
     icon: "Sparkle",
-    title: "Test Marketing Ideas",
+    title: "Enhanced Mobility",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+      "Deliver prostheses that improve both physical performance and user comfort for daily and athletic activities.",
   },
 ];
 
@@ -43,12 +43,10 @@ export const BenefitsSection = () => {
           <h2 className="text-lg text-primary mb-2 tracking-wider">Benefits</h2>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Your Shortcut to Success
+            Why Choose STRIDAPT?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
-            ducimus reprehenderit architecto rerum similique facere odit
-            deleniti necessitatibus quo quae.
+            STRIDAPT combines advanced AI and parametric design to deliver affordable, personalized prosthetics that fit perfectly and boost mobility.
           </p>
         </div>
 

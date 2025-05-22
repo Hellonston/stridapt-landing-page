@@ -1,71 +1,58 @@
 "use client";
 
-import { Icon } from "@/components/ui/icon";
 import { Marquee } from "@devnomic/marquee";
 import "@devnomic/marquee/dist/index.css";
-import { icons } from "lucide-react";
-interface sponsorsProps {
-  icon: string;
+import Image from "next/image";
+
+interface SponsorProps {
   name: string;
+  logoUrl: string;
 }
 
-const sponsors: sponsorsProps[] = [
+const sponsors: SponsorProps[] = [
   {
-    icon: "Crown",
-    name: "Acmebrand",
+    name: "Teletón",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Telet%C3%B3n_Chile_Logo.png",
   },
   {
-    icon: "Vegan",
-    name: "Acmelogo",
+    name: "Club UC (CDUC)",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/3/33/LogoCDUC.png",
   },
   {
-    icon: "Ghost",
-    name: "Acmesponsor",
-  },
-  {
-    icon: "Puzzle",
-    name: "Acmeipsum",
-  },
-  {
-    icon: "Squirrel",
-    name: "Acme",
-  },
-  {
-    icon: "Cookie",
-    name: "Accmee",
-  },
-  {
-    icon: "Drama",
-    name: "Acmetech",
+    name: "PUC",
+    logoUrl: "https://cdn.freebiesupply.com/logos/large/2x/universidad-catolica-de-chile-logo-png-transparent.png",
   },
 ];
+
+// Duplicate sponsors to ensure infinite looping
+const sponsorsLoop = [...sponsors, ...sponsors];
 
 export const SponsorsSection = () => {
   return (
     <section id="sponsors" className="max-w-[75%] mx-auto pb-24 sm:pb-32">
       <h2 className="text-lg md:text-xl text-center mb-6">
-        Our Platinum Sponsors
+        Our Sponsors
       </h2>
 
       <div className="mx-auto">
         <Marquee
-          className="gap-[3rem]"
+          className="gap-[5rem]"
           fade
-          innerClassName="gap-[3rem]"
+          innerClassName="gap-[5rem]"
           pauseOnHover
         >
-          {sponsors.map(({ icon, name }) => (
+          {sponsorsLoop.map(({ name, logoUrl }, idx) => (
             <div
-              key={name}
+              key={`${name}-${idx}`}
               className="flex items-center text-xl md:text-2xl font-medium"
             >
-              <Icon
-                name={icon as keyof typeof icons}
-                size={32}
-                color="white"
+              <Image
+                src={logoUrl}
+                alt={`${name} logo`}
+                width={80}
+                height={80}
                 className="mr-2"
               />
-              {name}
             </div>
           ))}
         </Marquee>

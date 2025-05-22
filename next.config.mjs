@@ -14,6 +14,22 @@ const nextConfig = {
         protocol: "https",
         hostname: "github.com",
       },
+      {
+        protocol: "https",
+        hostname: "media.licdn.com",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+      },
+      {
+        protocol: "https",
+        hostname: "images.seeklogo.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.freebiesupply.com",
+      },
     ],
   },
 };

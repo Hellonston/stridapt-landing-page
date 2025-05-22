@@ -11,39 +11,39 @@ interface FeaturesProps {
 const featureList: FeaturesProps[] = [
   {
     icon: "TabletSmartphone",
-    title: "Mobile Friendly",
+    title: "Online 3D Scanning",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, consectetur.",
+      "Capture precise limb measurements remotely through our user-friendly online scan tool.",
   },
   {
     icon: "BadgeCheck",
-    title: "Social Proof",
+    title: "AI-Powered Design",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Natus consectetur, odio ea accusamus aperiam.",
+      "Our AI algorithm generates optimal prosthetic models tailored to each user's needs.",
   },
   {
     icon: "Goal",
-    title: "Targeted Content",
+    title: "Parametric Customization",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. odio ea accusamus aperiam.",
+      "Adjust design parameters in real-time for perfect fit and functionality.",
   },
   {
     icon: "PictureInPicture",
-    title: "Strong Visuals",
+    title: "Distributed Manufacturing",
     description:
-      "Lorem elit. A odio velit cum aliquam. Natus consectetur dolores, odio ea accusamus aperiam.",
+      "Leverage a network of manufacturing partners for fast, scalable production.",
   },
   {
     icon: "MousePointerClick",
-    title: "Clear CTA",
+    title: "Seamless Integration",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing. odio ea accusamus consectetur.",
+      "Sync design data with production partners with a single click for hassle-free workflows.",
   },
   {
     icon: "Newspaper",
-    title: "Clear Headline",
+    title: "Data-Driven Insights",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur.",
+      "Access performance analytics to continuously improve comfort and durability.",
   },
 ];
 
@@ -55,13 +55,11 @@ export const FeaturesSection = () => {
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        What Makes Us Different
+        What Sets STRIDAPT Apart
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-        fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio
-        facere tenetur.
+        STRIDAPT combines cutting-edge AI, remote scanning, and a global manufacturing network to deliver personalized prosthetics faster and at lower cost.
       </h3>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
