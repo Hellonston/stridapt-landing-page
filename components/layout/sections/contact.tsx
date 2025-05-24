@@ -69,8 +69,8 @@ ${message}`
             <h2 className="text-3xl md:text-4xl font-bold">Get in Touch</h2>
           </div>
           <p className="mb-8 text-muted-foreground lg:w-5/6">
-            We'd love to hear from you. Whether you have questions about our
-            prostheses, need support, or just want to say hi, feel free to reach out!
+           We&apos;d love to hear from you. Whether you have questions about our
+           prostheses, need support, or just want to say hi, feel free to reach out!
           </p>
 
           <div className="flex flex-col gap-4">
