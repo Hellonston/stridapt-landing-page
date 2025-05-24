@@ -30,6 +30,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.freebiesupply.com",
       },
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+      },
     ],
   },
 };
