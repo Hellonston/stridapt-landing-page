@@ -24,11 +24,10 @@ interface SocialNetworkProps {
 export const TeamSection = () => {
   const teamList: TeamProps[] = [
     {
-      imageUrl:
-        "https://media.licdn.com/dms/image/v2/D4D03AQEMD6_3gRGpGw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725671687550?e=1753315200&v=beta&t=Q6xb44uP6At819LVZnKtnuLLSz7Q-G7DK22mSlIkPUs",
+      imageUrl: "/enrique-rojas.jpg",
       firstName: "Enrique",
       lastName: "Rojas",
-      positions: ["Chief Information Officer", "Project Lead"],
+      positions: ["CTO & Team Lead"],
       socialNetworks: [
         {
           name: "LinkedIn",
@@ -37,11 +36,10 @@ export const TeamSection = () => {
       ],
     },
     {
-      imageUrl:
-        "https://media.licdn.com/dms/image/v2/D4E03AQH_EPsOPKH57g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727818577059?e=1753315200&v=beta&t=FkTvUjlkqvLe2sHaCLMe4PpMn_ZOqhcSYas8S4xVFTU",
-      firstName: "Maria teresa",
+      imageUrl: "/tere-banados.jpg",
+      firstName: "María Teresa",
       lastName: "Bañados",
-      positions: ["Chief Operations Officer", "Commercial Strategy Lead"],
+      positions: ["Industrial & Communication"],
       socialNetworks: [
         {
           name: "LinkedIn",
@@ -50,11 +48,10 @@ export const TeamSection = () => {
       ],
     },
     {
-      imageUrl:
-        "https://media.licdn.com/dms/image/v2/D4E03AQF1oF3R-efPuA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1687983695648?e=1753315200&v=beta&t=q8idILQHpnIuytYIdFuA5Cg2MdhqJtRe36l1i9C6rM4",
+      imageUrl: "/renata-ojeda.jpg",
       firstName: "Renata",
       lastName: "Ojeda",
-      positions: ["Chief AI Officer", "Biomedical AI Research Lead"],
+      positions: ["Operations & Validation"],
       socialNetworks: [
         {
           name: "LinkedIn",
@@ -63,11 +60,10 @@ export const TeamSection = () => {
       ],
     },
     {
-      imageUrl:
-        "https://media.licdn.com/dms/image/v2/D4D03AQFWgup5VTLq1A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726095202248?e=1753315200&v=beta&t=kBB6lucFp9G1mCgPdmjH23RsFBRMUxqxLQOFyvH-9NY",
+      imageUrl: "/DanielToribio.png",
       firstName: "Daniel",
       lastName: "Toribio",
-      positions: ["Chief Technology Officer", "Lead AI Architect"],
+      positions: ["Software & AI"],
       socialNetworks: [
         {
           name: "LinkedIn",
@@ -80,14 +76,10 @@ export const TeamSection = () => {
       ],
     },
     {
-      imageUrl:
-        "https://media.licdn.com/dms/image/v2/D4D03AQGuVQe3cZCT6g/profile-displayphoto-shrink_400_400/B4DZW1gSdjHIAg-/0/1742506895974?e=1753315200&v=beta&t=z6GzxFs6lGlTiOx0DLEVDxkRagz3oO0_3K7-AUZAZEc",
+      imageUrl: "/benjamin-contard.jpg",
       firstName: "Benjamín",
       lastName: "Contardo",
-      positions: [
-        "Lead Prosthetics Design & Development",
-        "3D Prototyping Specialist",
-      ],
+      positions: ["Mechanical & Prototyping"],
       socialNetworks: [
         {
           name: "LinkedIn",
@@ -96,15 +88,16 @@ export const TeamSection = () => {
       ],
     },
     {
-      imageUrl:
-        "https://images.unsplash.com/photo-1616805765352-beedbad46b2a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      imageUrl: "/vicente-adauy-oficial.jpg",
       firstName: "Vicente",
       lastName: "Adauy",
-      positions: [
-        "Lead Prosthetics Design & Development",
-        "3D Prototyping Specialist",
+      positions: ["Additive Manufacturing & CAM"],
+      socialNetworks: [
+        {
+          name: "LinkedIn",
+          url: "https://www.linkedin.com/in/vicente-adauy-0236a336a/",
+        },
       ],
-      socialNetworks: [],
     },
   ];
   const socialIcon = (socialName: string) => {
@@ -147,7 +140,11 @@ export const TeamSection = () => {
                     alt=""
                     width={300}
                     height={300}
-                    className="w-full aspect-square object-cover saturate-0 transition-all duration-200 ease-linear size-full group-hover/hoverimg:saturate-100 group-hover/hoverimg:scale-[1.01]"
+                    className={`w-full aspect-square object-cover saturate-0 transition-all duration-200 ease-linear size-full group-hover/hoverimg:saturate-100 group-hover/hoverimg:scale-[1.01] ${
+                      imageUrl.includes("DanielToribio")
+                        ? "object-[center_top]"
+                        : "object-center"
+                    }`}
                   />
                 </div>
                 <CardTitle className="py-6 pb-4 px-6">
