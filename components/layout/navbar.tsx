@@ -1,151 +1,101 @@
 "use client";
-import { ChevronsDown, Github, Menu } from "lucide-react";
 import React from "react";
 import {
   Sheet,
   SheetContent,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "../ui/sheet";
-import { Separator } from "../ui/separator";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "../ui/navigation-menu";
-import { Button } from "../ui/button";
+import { Menu } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import { ToggleTheme } from "./toogle-theme";
 
 interface RouteProps {
   href: string;
   label: string;
 }
 
-interface FeatureProps {
-  title: string;
-  description: string;
-}
-
 const routeList: RouteProps[] = [
-  {
-    href: "#testimonials",
-    label: "Testimonials",
-  },
-  {
-    href: "#team",
-    label: "Team",
-  },
-  {
-    href: "#contact",
-    label: "Contact",
-  },
-  {
-    href: "#faq",
-    label: "FAQ",
-  },
-];
-
-const featureList: FeatureProps[] = [
-  {
-    title: "Showcase Your Value ",
-    description: "Highlight how your product solves user problems.",
-  },
-  {
-    title: "Build Trust",
-    description:
-      "Leverages social proof elements to establish trust and credibility.",
-  },
-  {
-    title: "Capture Leads",
-    description:
-      "Make your lead capture form visually appealing and strategically.",
-  },
+  { href: "#tecnologia", label: "Tecnología" },
+  { href: "#rendimiento", label: "Rendimiento" },
+  { href: "#proceso", label: "Proceso" },
+  { href: "#equipo", label: "Equipo" },
+  { href: "#contact", label: "Contacto" },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card">
-      <Link href="/" className="font-bold text-lg flex items-center">
-        <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-        Stridapt
+    <nav className="fixed top-0 w-full border-b border-white/10 glass-refraction z-50 flex justify-between items-center px-8 py-4 max-w-none">
+      <Link href="/">
+        <div className="text-2xl font-black tracking-tighter text-white uppercase font-headline">
+          STRIDAPT
+        </div>
       </Link>
-      {/* <!-- Mobile --> */}
-      <div className="flex items-center lg:hidden">
+
+      {/* Desktop */}
+      <div className="hidden md:flex gap-10 items-center">
+        {routeList.map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            className="font-headline font-bold tracking-tight uppercase text-secondary hover:text-white transition-colors"
+          >
+            {label}
+          </Link>
+        ))}
+      </div>
+
+      <div className="hidden md:block">
+        <Link href="#contact">
+          <button className="bg-primary-container text-on-primary-container font-headline font-bold tracking-tight uppercase px-6 py-2.5 transition-transform scale-100 active:scale-95 hover:brightness-110">
+            EMPEZAR
+          </button>
+        </Link>
+      </div>
+
+      {/* Mobile */}
+      <div className="flex items-center md:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Menu
               onClick={() => setIsOpen(!isOpen)}
-              className="cursor-pointer lg:hidden"
+              className="cursor-pointer text-white"
             />
           </SheetTrigger>
-
           <SheetContent
             side="left"
-            className="flex flex-col justify-between rounded-tr-2xl rounded-br-2xl bg-card border-secondary"
+            className="flex flex-col bg-surface border-surface-container"
           >
-            <div>
-              <SheetHeader className="mb-4 ml-4">
-                <SheetTitle className="flex items-center">
-                  <Link href="/" className="flex items-center">
-                    <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-                    Stridapt
-                  </Link>
-                </SheetTitle>
-              </SheetHeader>
-
-              <div className="flex flex-col gap-2">
-                {routeList.map(({ href, label }) => (
-                  <Button
-                    key={href}
-                    onClick={() => setIsOpen(false)}
-                    asChild
-                    variant="ghost"
-                    className="justify-start text-base"
-                  >
-                    <Link href={href}>{label}</Link>
-                  </Button>
-                ))}
-              </div>
+            <SheetHeader className="mb-8">
+              <SheetTitle>
+                <div className="text-2xl font-black tracking-tighter text-white uppercase font-headline">
+                  STRIDAPT
+                </div>
+              </SheetTitle>
+            </SheetHeader>
+            <div className="flex flex-col gap-4">
+              {routeList.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={() => setIsOpen(false)}
+                  className="font-headline font-bold tracking-tight uppercase text-secondary hover:text-white transition-colors text-lg py-2"
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
-
-            <SheetFooter className="flex-col sm:flex-col justify-start items-start">
-              <Separator className="mb-2" />
-
-              <ToggleTheme />
-            </SheetFooter>
+            <div className="mt-8">
+              <Link href="#contact" onClick={() => setIsOpen(false)}>
+                <button className="w-full bg-primary-container text-on-primary-container font-headline font-bold tracking-tight uppercase px-6 py-3">
+                  EMPEZAR
+                </button>
+              </Link>
+            </div>
           </SheetContent>
         </Sheet>
       </div>
-
-      {/* <!-- Desktop --> */}
-      <NavigationMenu className="hidden lg:block mx-auto">
-        <NavigationMenuList>
-
-          <NavigationMenuItem>
-            {routeList.map(({ href, label }) => (
-              <NavigationMenuLink key={href} asChild>
-                <Link href={href} className="text-base px-2">
-                  {label}
-                </Link>
-              </NavigationMenuLink>
-            ))}
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-
-      <div className="hidden lg:flex">
-        <ToggleTheme />
-
-        
-      </div>
-    </header>
+    </nav>
   );
 };
