@@ -1,41 +1,22 @@
-import { BenefitsSection } from "@/components/layout/sections/benefits";
-import { CommunitySection } from "@/components/layout/sections/community";
 import { ContactSection } from "@/components/layout/sections/contact";
-import { FAQSection } from "@/components/layout/sections/faq";
-import { FeaturesSection } from "@/components/layout/sections/features";
+import { CTASection } from "@/components/layout/sections/cta";
 import { FooterSection } from "@/components/layout/sections/footer";
 import { HeroSection } from "@/components/layout/sections/hero";
-import { PricingSection } from "@/components/layout/sections/pricing";
-import { ServicesSection } from "@/components/layout/sections/services";
+import { ProblemStatsSection } from "@/components/layout/sections/problem-stats";
+import { ProsFlowSection } from "@/components/layout/sections/prosflow";
+import { SolutionGridSection } from "@/components/layout/sections/solution-grid";
 import { SponsorsSection } from "@/components/layout/sections/sponsors";
 import { TeamSection } from "@/components/layout/sections/team";
-// import { TestimonialSection } from "@/components/layout/sections/testimonial";
 
 export const metadata = {
-  title: "Stridapt",
-  description: "Free Shadcn landing page for developers",
+  title: "STRIDAPT | Ingeniería de Rendimiento",
+  description:
+    "La primera prótesis transtibial 2-en-1 adaptativa del mundo — diseñada para la vida diaria y el deporte de élite, personalizada por IA para cada cuerpo.",
   openGraph: {
     type: "website",
-    url: "https://github.com/nobruf/shadcn-landing-page.git",
-    title: "Shadcn - Landing template",
-    description: "Free Shadcn landing page for developers",
-    images: [
-      {
-        url: "https://res.cloudinary.com/dbzv9xfjp/image/upload/v1723499276/og-images/shadcn-vue.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Shadcn - Landing template",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "https://github.com/nobruf/shadcn-landing-page.git",
-    title: "Shadcn - Landing template",
-    description: "Free Shadcn landing page for developers",
-    images: [
-      "https://res.cloudinary.com/dbzv9xfjp/image/upload/v1723499276/og-images/shadcn-vue.jpg",
-    ],
+    title: "STRIDAPT | Ingeniería de Rendimiento",
+    description:
+      "La primera prótesis transtibial 2-en-1 adaptativa del mundo — diseñada para la vida diaria y el deporte de élite, personalizada por IA para cada cuerpo.",
   },
 };
 
@@ -44,15 +25,12 @@ export default function Home() {
     <>
       <HeroSection />
       <SponsorsSection />
-      <BenefitsSection />
-      <FeaturesSection />
-      {/* <ServicesSection /> */}
-      {/* <TestimonialSection /> */}
+      <ProblemStatsSection />
+      <SolutionGridSection />
+      <ProsFlowSection />
       <TeamSection />
-      {/* <CommunitySection /> */}
-      {/* <PricingSection /> */}
+      <CTASection />
       <ContactSection />
-      <FAQSection />
       <FooterSection />
     </>
   );
