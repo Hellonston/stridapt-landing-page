@@ -1,61 +1,65 @@
 "use client";
-
-import { Marquee } from "@devnomic/marquee";
-import "@devnomic/marquee/dist/index.css";
 import Image from "next/image";
 
 interface SponsorProps {
   name: string;
   logoUrl: string;
+  size: number;
 }
 
 const sponsors: SponsorProps[] = [
   {
-    name: "Teletón",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Telet%C3%B3n_Chile_Logo.png",
+    name: "CORFO",
+    logoUrl: "/corfo-logo.png",
+    size: 65,
   },
   {
-    name: "Club UC (CDUC)",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/3/33/LogoCDUC.png",
-  },
-  {
-    name: "PUC",
-    logoUrl: "https://cdn.freebiesupply.com/logos/large/2x/universidad-catolica-de-chile-logo-png-transparent.png",
+    name: "Pontificia Universidad Católica de Chile",
+    logoUrl: "/puc-logo.png",
+    size: 34,
   },
 ];
 
-// Duplicate sponsors to ensure infinite looping
-const sponsorsLoop = [...sponsors, ...sponsors];
+const SponsorItems = () => (
+  <>
+    {sponsors.map(({ name, logoUrl, size }) => (
+      <div
+        key={name}
+        className="flex items-center gap-3 shrink-0 opacity-50 hover:opacity-100 transition-opacity px-8"
+      >
+        <Image
+          src={logoUrl}
+          alt={`${name} logo`}
+          width={size}
+          height={size}
+          className="mix-blend-screen"
+        />
+        <span className="font-label text-xs text-tertiary tracking-wide uppercase whitespace-nowrap">
+          {name}
+        </span>
+      </div>
+    ))}
+  </>
+);
 
 export const SponsorsSection = () => {
   return (
-    <section id="sponsors" className="max-w-[75%] mx-auto pb-24 sm:pb-32">
-      <h2 className="text-lg md:text-xl text-center mb-6">
-        Our Sponsors
-      </h2>
-
-      <div className="mx-auto">
-        <Marquee
-          className="gap-[5rem]"
-          fade
-          innerClassName="gap-[5rem]"
-          pauseOnHover
-        >
-          {sponsorsLoop.map(({ name, logoUrl }, idx) => (
-            <div
-              key={`${name}-${idx}`}
-              className="flex items-center text-xl md:text-2xl font-medium"
-            >
-              <Image
-                src={logoUrl}
-                alt={`${name} logo`}
-                width={80}
-                height={80}
-                className="mr-2"
-              />
-            </div>
-          ))}
-        </Marquee>
+    <section className="py-10 bg-surface-container-lowest border-t border-b border-white/5 overflow-hidden">
+      <div className="flex w-max">
+        <div className="flex shrink-0 items-center animate-marquee">
+          <SponsorItems />
+          <SponsorItems />
+          <SponsorItems />
+          <SponsorItems />
+          <SponsorItems />
+        </div>
+        <div className="flex shrink-0 items-center animate-marquee">
+          <SponsorItems />
+          <SponsorItems />
+          <SponsorItems />
+          <SponsorItems />
+          <SponsorItems />
+        </div>
       </div>
     </section>
   );

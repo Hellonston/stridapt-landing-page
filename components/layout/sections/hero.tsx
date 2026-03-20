@@ -1,71 +1,64 @@
-"use client";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { useTheme } from "next-themes";
 import Image from "next/image";
-import Link from "next/link";
 
 export const HeroSection = () => {
-  const { theme } = useTheme();
   return (
-    <section className="container w-full">
-      <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
-        <div className="text-center space-y-8">
-          <Badge variant="outline" className="text-sm py-2">
-            <span className="mr-2 text-primary">
-              <Badge>Startup</Badge>
-            </span>
-            <span> Now Seeking Funding</span>
-          </Badge>
+    <header className="relative min-h-screen flex flex-col justify-center items-center pt-24 overflow-hidden">
+      {/* Dot grid background */}
+      <div className="absolute inset-0 z-0 dot-grid"></div>
 
-          <div className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold">
-            <h1>
-              Empowering Mobility with
-              <span className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
-                Stridapt
-              </span>
-              Solutions
-            </h1>
-          </div>
+      {/* Background Image - Prosthetic leg */}
+      <div className="absolute inset-0 z-[1]">
+        <Image
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2vYpWKZW4c3tA2yVBa0pyKswqbUwfebCwv-oSXUvOxZqEVfey7ut44nnw45FHcn5vIBww6GS06e08iMJIiSghjINRctKNZePIGo3-s_ulgnD2oi4qByibB9gXcYF_rLU_YByc4yZVmR--TZusLFy1f-wHhwYyA6_jnWiv264B-OVYUEOwVDZ0iG9o-uxseFg1kcNtlhehnaJ6xvKGwwfElItJVxL5M5flq9Vavu6ZfQUQ3wFxMaRnEbGbYOs3wIPANX-vEAeyS8DI"
+          alt="Prótesis transtibial robótica de alta tecnología"
+          fill
+          className="object-cover grayscale brightness-[0.35] contrast-125"
+          priority
+        />
+        <div className="scan-line"></div>
+      </div>
 
-          <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-            {`Join us on our mission to revolutionize prosthetics through AI-driven, custom-designed solutions. Partner, invest, and transform lives together.`}
-          </p>
+      {/* Gradient overlay - subtle, mostly at bottom */}
+      <div className="absolute inset-0 z-[2] bg-gradient-to-b from-background/30 via-transparent to-background"></div>
 
-          <div className="space-y-4 md:space-y-0 md:space-x-4">
-            <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
-              Join Our Journey
-              <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
-            </Button>
-
-            <Button
-              asChild
-              variant="secondary"
-              className="w-5/6 md:w-1/4 font-bold"
-            >
-                Know More
-            </Button>
-          </div>
+      {/* Content */}
+      <div className="relative z-10 text-center max-w-5xl px-6">
+        <div className="inline-block mb-4 px-3 py-1 bg-primary-container/10 border border-primary-container/20 text-primary-container font-label text-xs tracking-widest uppercase">
+          V1.0 PROTOSYSTEM
         </div>
 
-        <div className="relative group mt-14">
-          <div className="absolute top-2 lg:-top-8 left-1/2 transform -translate-x-1/2 w-[90%] mx-auto h-24 lg:h-80 bg-primary/50 rounded-full blur-3xl"></div>
-          <Image
-            width={1200}
-            height={1200}
-            className="w-full md:w-[1200px] mx-auto rounded-lg relative rouded-lg leading-none flex items-center border border-t-2 border-secondary  border-t-primary/30"
-            src={
-              theme === "light"
-                ? "/hero-image-light.jpeg"
-                : "/stridapt-team-photo.JPG"
-            }
-            alt="dashboard"
-          />
+        <div className="font-headline text-6xl md:text-8xl font-black tracking-tighter text-white uppercase leading-[0.9] mb-8">
+          Tu cuerpo.<br />
+          <span className="text-primary-container">Tu ritmo.</span>
+        </div>
 
-          <div className="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg"></div>
+        <p className="font-body text-xl md:text-2xl text-tertiary max-w-3xl mx-auto leading-relaxed mb-12">
+          La primera prótesis transtibial 2-en-1 adaptativa del mundo —
+          diseñada para la vida diaria y el deporte de élite, personalizada
+          por IA para cada cuerpo.
+        </p>
+
+        <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+          <button className="w-full md:w-auto px-10 py-4 schematic-gradient text-on-primary-container font-headline font-bold tracking-widest uppercase text-lg">
+            Solicitar Demo
+          </button>
+          <button className="w-full md:w-auto px-10 py-4 border border-outline/30 text-white font-headline font-bold tracking-widest uppercase text-lg hover:bg-white/5 transition-all">
+            Ver Tecnología
+          </button>
         </div>
       </div>
-    </section>
+
+      {/* HUD Elements */}
+      <div className="absolute bottom-12 left-12 z-10 hidden lg:block font-label text-[10px] text-secondary tracking-widest uppercase opacity-60">
+        <div>GPS_COORD: 19.4326° N, 99.1332° W</div>
+        <div>STATUS: PROSFLOW_ENGINE_ACTIVE</div>
+        <div>LATENCY: 0.002MS</div>
+      </div>
+      <div className="absolute bottom-12 right-12 z-10 hidden lg:block font-label text-[10px] text-secondary tracking-widest uppercase opacity-60 text-right">
+        <div>BIOMETRIC_SYNC: 100%</div>
+        <div>ALGO_REV: 8.2.1-SYNTH</div>
+        <div>STABILITY_INDEX: OPTIMAL</div>
+      </div>
+    </header>
   );
 };
