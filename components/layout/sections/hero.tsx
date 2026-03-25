@@ -39,12 +39,12 @@ export const HeroSection = () => {
         </p>
 
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-          <button className="w-full md:w-auto px-10 py-4 schematic-gradient text-on-primary-container font-headline font-bold tracking-widest uppercase text-lg">
+          <a href="#contact" className="w-full md:w-auto px-10 py-4 schematic-gradient text-on-primary-container font-headline font-bold tracking-widest uppercase text-lg text-center">
             Solicitar Demo
-          </button>
-          <button className="w-full md:w-auto px-10 py-4 border border-outline/30 text-white font-headline font-bold tracking-widest uppercase text-lg hover:bg-white/5 transition-all">
+          </a>
+          <a href="#contact" className="w-full md:w-auto px-10 py-4 border border-outline/30 text-white font-headline font-bold tracking-widest uppercase text-lg hover:bg-white/5 transition-all text-center">
             Ver Tecnología
-          </button>
+          </a>
         </div>
       </div>
 
