@@ -2,28 +2,28 @@ export const ProsFlowSection = () => {
   const steps = [
     {
       num: "01",
-      title: "Evaluación",
-      desc: "Escaneo biométrico 3D de alta precisión.",
+      title: "Consulta",
+      desc: "Entendemos tu cuerpo, tu estilo de vida y tus metas de movilidad.",
     },
     {
       num: "02",
-      title: "Datos",
-      desc: "Procesamiento de cinemática de marcha.",
+      title: "Análisis",
+      desc: "Capturamos datos clave para crear un perfil biomecánico único.",
     },
     {
       num: "03",
-      title: "Diseño IA",
-      desc: "Generación de topología optimizada por IA.",
+      title: "Diseño",
+      desc: "Nuestra IA genera una solución personalizada para ti.",
     },
     {
       num: "04",
-      title: "Fabricación",
-      desc: "Impresión SLS en polímeros de grado médico.",
+      title: "Producción",
+      desc: "Fabricamos tu prótesis con materiales de última generación.",
     },
     {
       num: "05",
-      title: "Entrega",
-      desc: "Ajuste final y activación de software.",
+      title: "Activación",
+      desc: "Ajuste profesional y acompañamiento continuo.",
     },
   ];
 
