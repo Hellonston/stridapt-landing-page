@@ -6,6 +6,7 @@ import { ProblemStatsSection } from "@/components/layout/sections/problem-stats"
 import { ProsFlowSection } from "@/components/layout/sections/prosflow";
 import { SolutionGridSection } from "@/components/layout/sections/solution-grid";
 import { SponsorsSection } from "@/components/layout/sections/sponsors";
+import { ImpactStatsSection } from "@/components/layout/sections/impact-stats";
 import { TeamSection } from "@/components/layout/sections/team";
 
 export const metadata = {
@@ -27,6 +28,7 @@ export default function Home() {
       <SponsorsSection />
       <ProblemStatsSection />
       <SolutionGridSection />
+      <ImpactStatsSection />
       <ProsFlowSection />
       <TeamSection />
       <CTASection />
